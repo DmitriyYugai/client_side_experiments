@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function validate() {
+            var s = '' ;
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var description = $('#description').val();
+            if (name == '') {
+                s = s + ' ' + $('#name').attr('id');
+            }
+            if (surname == '') {
+                s = s + ' ' + $('#surname').attr('id');
+            }
+            if (description == '') {
+                s = s + ' ' + $('#description').attr('id');
+            }
+            if (name == '' || surname == '' || description == '') {
+                alert('Fill the fileds:' + s);
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -37,18 +59,20 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="desc">Description:</label>
+            <label class="control-label col-sm-2" for="description">Description:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="desc" placeholder="Description" name="desc">
+                <input type="text" class="form-control" id="description" placeholder="Description" name="description">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" onclick="return validate();">Submit</button>
             </div>
         </div>
     </form>
+
     <br> <br> <br>
+
     <div class="container">
         <table class="table table-striped">
             <thead>
