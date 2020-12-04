@@ -28,6 +28,12 @@
             }
             return true;
         }
+
+        function addRow() {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<th>Dima</th><th>Yugay</th><th>Male</th><th>Student</th>';
+            $('#table_body').append(tr);
+        }
     </script>
 </head>
 <body>
@@ -83,15 +89,9 @@
                 <th>Description</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th>Dima</th>
-                <th>Yugay</th>
-                <th>Male</th>
-                <th>Student</th>
-            </tr>
-            </tbody>
+            <tbody id="table_body"></tbody>
         </table>
+        <button class="btn btn-default" onclick="return addRow();">Add row</button>
     </div>
 </div>
 
